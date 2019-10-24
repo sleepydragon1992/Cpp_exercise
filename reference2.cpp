@@ -1,19 +1,18 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
+void square(int &);
+
 int main (void) {
-    int number = 88;
-    int & refNumber = number;
+   int number = 8;
+   cout << "In main(): " << &number << endl;
+   cout << number << endl;
+   square( number);
+   cout << number << endl;
+}
 
-    cout << number << endl;
-    cout << refNumber << endl;
-
-    refNumber = 99;
-    cout << refNumber << endl;
-    cout << number << endl;
-
-    number = 55;
-    cout << number << endl;
-    cout << refNumber << endl;
-    
+void square (int & pNumber){
+    cout << "In square(): " << &pNumber << endl;
+    pNumber = pow(pNumber, 2);
 }
