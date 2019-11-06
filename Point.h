@@ -1,21 +1,19 @@
-//#ifndef POINT_H
-//#define POINT_H
-
-
-class Point{
-    private:
-        int x;
-        int y;
-    public:
-        Point(int x = 0, int y = 0);
-        int getX() const;
-        void setX(int x);
-        int getY() const;
-        void setY(int y);
-        void setXY(int x, int y);
-        double getMagnitude() const;
-        double getArgument() const;
-        void print() const;
+/* The Point class Header file (Point.h) */
+#ifndef POINT_H
+#define POINT_H
+ 
+class Point {
+private:
+   int x, y;  // Private data members
+ 
+public:
+   Point(int x = 0, int y = 0); // Constructor with default arguments
+   int getX() const;  // Getter
+   void setX(int x);  // Setter
+   int getY() const;
+   void setY(int y);
+   void setXY(int x, int y);
+   virtual void print() const;
 };
-
-//#endif
+ 
+#endif

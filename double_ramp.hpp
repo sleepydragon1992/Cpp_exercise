@@ -24,5 +24,5 @@ class Double_Ramp{
         double get_time();
         void print_graph();
         void set_parameter_first(double dist, double firstRampAcc, double firstRampVel, double secondRampAcc, double targetVel);
-        void set_parameter_second(double dist, double firstRampAcc, double firstRampVel, double secondRampAcc, double targetVel, double firstRampDec, double secondRampDec, double layer_thickness)
+        void set_parameter_second(double dist, double firstRampAcc, double firstRampVel, double secondRampAcc, double targetVel, double firstRampDec, double secondRampDec, double layer_thickness);
 };

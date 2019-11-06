@@ -4,7 +4,7 @@
 using namespace std;
  
 // Constructor - The default values are specified in the declaration
-Point::Point(int x, int y) : x(x), y(y) { }
+Point::Point(int x, int y) : x(x), y(y) { } // Using initializer list
  
 // Getters
 int Point::getX() const { return x; }
@@ -15,8 +15,11 @@ void Point::setX(int x) { this->x = x; }
 void Point::setY(int y) { this->y = y; }
  
 // Public Functions
-void Point::setXY(int x, int y) { this->x = x; this->y = y; }
- 
 void Point::print() const {
-   cout << "Point @ (" << x << "," << y << ")";
+   cout << "(" << x << "," << y << ")" << endl;
+}
+ 
+// Member function overloading '+' operator
+const Point Point::operator+(const Point & rhs) const {
+   return Point(x + rhs.x, y + rhs.y);
 }

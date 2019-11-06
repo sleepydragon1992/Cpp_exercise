@@ -16,9 +16,9 @@ double get_time(double stage1_dist, double stage1_firstRampAcc, double stage1_fi
 
     t3 = (stage1_dist - (0.5*stage1_firstRampAcc*t1*t1   +  0.5*stage1_secondRampAcc*t2*t2  +  stage1_firstRampVel*t2))/stage1_targetVel ;
 
-    t6 = (stage2_dist - (stage1_targetVel*t4*t4 + 0.5*stage2_firstRampAcc*t4*t4 + stage2_firstRampVel*t5 + 0.5*stage2_secondRampAcc*t5*t5 + stage2_targetVel*t7 - 0.5*stage2_firstRampDec*t7*t7 + stage2_firstRampVel*t8 - stage2_secondRampDec*t8*t8))/stage2_targetVel;
+    t6 = (stage2_dist - (stage1_targetVel*t4 + 0.5*stage2_firstRampAcc*t4*t4 + stage2_firstRampVel*t5 + 0.5*stage2_secondRampAcc*t5*t5 + stage2_targetVel*t7 - 0.5*stage2_firstRampDec*t7*t7 + stage2_firstRampVel*t8 - 0.5*stage2_secondRampDec*t8*t8))/stage2_targetVel;
 
-    return t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8;
+    return t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 ;
 }
 
 

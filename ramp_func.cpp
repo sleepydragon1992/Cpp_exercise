@@ -5,17 +5,27 @@ using namespace std;
 
 
 
-    double get_time(double dist, double firstRampAcc, double firstRampVel, double secondRampAcc, double targetVel){
-     (D - (0.5*a1*t1*t1  +  v1*t2  +  0.5*a2*t2*t2  +  v2*t4 -  0.5*d1*t4*t4  -  v1*t5  -  0.5*a4*t5*t5))/v2  +    v1/a1   +   (v2-v1)/a2    +   v2 
-            return 0;
+    double get_time(double dist, double firstRampAcc, double firstRampVel, double secondRampAcc, double targetVel, double firstRampDec, double secondRampDec, double layer_thickness){
+        double t1 = firstRampVel/firstRampAcc;
+        double t2 = (targetVel-firstRampVel)/secondRampAcc;
+        double t4 = (targetVel-firstRampVel)/firstRampDec;
+        double t5 = firstRampVel/secondRampDec;
+    
+        double t3 = ((dist-layer_thickness) - (0.5*firstRampAcc*t1*t1 + firstRampVel*t2 + 0.5*secondRampAcc*t2*t2 + targetVel*t4 - 0.5*firstRampDec*t4*t4 + firstRampVel*t5 -0.5*firstRampDec*t5*t5))/targetVel
+
+        return t1 + t2 + t3 + t4 + t5;
     };
 
 
 int main (void){
-double dist             = 0;
-double firstRampAcc     = 0;
-double firstRampVel     = 0;
-double secondRampAcc    = 0;
-double targetVel        = 0;
+double dist             = 8;
+double firstRampAcc     = 20;
+double firstRampVel     = 4;
+double secondRampAcc    = 10;
+double targetVel        = 9;
+double firstRampDec     = 10;
+double secondRampDec    = 20;
+double layer_thickness  = 0.1;
 
+std::cout << get_time(dist,firstRampAcc,firstRampVel,secondRampAcc,targetVel,firstRampDec,secondRampDec,layer_thickness) << endl;
 }
