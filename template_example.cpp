@@ -1,22 +1,36 @@
+/* Test Function Template Overloading (FuncationTemplateOverloading.cpp) */
 #include <iostream>
-#include <stdio.h>
-
 using namespace std;
 
-template <typename T, typename U>
-T Max_value(T x, U y){
-    if (x>=y)   return x;
-    else        return y;
-}
+template<typename T>
+void mySwap(T &a, T &b);
+
+template<>
+void mySwap <int>(int & a, int &b);
+
 
 int main() {
+    double d1 = 1, d2 = 2;
+    mySwap(d1, d2);
 
-    cout << Max_value(3,7) << endl;
-    cout << Max_value(3.0, 7.0) << endl;
-    cout << Max_value('g', 'e') << endl;
-    cout << Max_value(3.0, 'a') << endl;
-    char a = 'b';
-    int ia = (int)a;
-    cout << ia << endl;
-    return 0;
+    int i1 = 1, i2 = 2;
+    //mySwap(i1, i2);
+}
+
+template <typename T> 
+void mySwap(T &a, T &b) {
+    cout << "Template" << endl;
+    T temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+
+template <>
+void mySwap<int>(int &a, int &b) {
+    cout << "Specialization" << endl;
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
 }
