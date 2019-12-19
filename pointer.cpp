@@ -4,22 +4,18 @@
 using namespace std;
 
 int main (void){
-    int number = 99;
-    int *pNumber;
-    pNumber = &number;
-
-    
-    cout << pNumber << endl;
-    cout << &number << endl;
-    cout << *pNumber << endl;
-    cout << number << endl;
-
-    *pNumber = 99;
-    cout << pNumber << endl;
-    cout << &number << endl;
-    cout << *pNumber << endl;
-    cout <<  number << endl;
-
-
-    cout << &pNumber << endl;
+    int a;
+    long b;
+    char ch;
+    int* i;
+    long* l;
+    char* c;
+    l = i+1;
+    c = l+1;
+    *i = a;
+    *l = b;
+    *c = ch;
+    cout << i << endl;
+    cout << l << endl;
+    cout << c << endl;
 }
